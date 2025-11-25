@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+</head>
+
+<body>
+    <h1>Lista de tarefas</h1>
+    <div id="Novatarefa">
+        <input id="adicionartarefa" placeholder="Escreva sua Nova tarefa" type="text">
+        <button id="botaoTarefa">adicionar tarefa</button>
+    </div>
+    <ul id="lista">
+
+    </ul>
+    <script>
+        const adicionartarefa = document.getElementById("adicionartarefa");
+        const lista = document.getElementById("lista");
+        const botaoTarefa = document.getElementById("botaoTarefa");
+
+        function adicionarTarefa() {
+            const texto = adicionarTarefa.value.trim();
+            if (texto === "") {
+                alert("Não ha nada para adicionar")
+                return;
+            }
+        }
+        const li = document.createElement('li');
+        li.textContent = texto;
+        const area = document.createElement('div');
+        area.className = area;
+    </script>
+</body>
+
+</html>
