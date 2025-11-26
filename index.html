@@ -5,33 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tarefas</title>
+    <style>
+        .concluida span{
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1>Lista de tarefas</h1>
     <div id="Novatarefa">
-        <input id="adicionartarefa" placeholder="Escreva sua Nova tarefa" type="text">
+        <input id="adicionarTarefa" placeholder="Escreva sua Nova tarefa" type="text">
         <button id="botaoTarefa">adicionar tarefa</button>
     </div>
-    <ul id="lista">
-
-    </ul>
+    <ol id="minhalista"></ol>
+    
     <script>
-        const adicionartarefa = document.getElementById("adicionartarefa");
-        const lista = document.getElementById("lista");
+        const adicionarTarefa = document.getElementById("adicionarTarefa");
+        const minhalista = document.getElementById("minhalista");
         const botaoTarefa = document.getElementById("botaoTarefa");
 
-        function adicionarTarefa() {
+        function criarTarefa() {
             const texto = adicionarTarefa.value.trim();
             if (texto === "") {
                 alert("Não ha nada para adicionar")
                 return;
             }
+
+            const li = document.createElement('li');
+            li.textContent = texto;
+            const area = document.createElement('div');
+            area.className = area;
+
+            const btnConcluir = document.createElement('button');
+            btnConcluir.textContent = 'Concluir';
+            btnConcluir.addEventListener('click', function () {
+                li.classList.toggle('concluida');
+
+            });
+
+            const btnRemover = document.createElement('button');
+            btnRemover.textContent = 'Remover';
+            btnRemover.addEventListener('click', function () {
+                minhalista.removeChild('li');/* removeChild = remover uma tag dentro da outra */
+            });
+
+            area.appendChild(btnConcluir);/* appendChild = adicionar uma tag dentro da outra */
+            area.appendChild(btnRemover);
+            const spanTexto = document.createElement('span');
+            spanTexto.textContent = texto;
+            li.textContent = "";
+            li.appendChild(spanTexto);
+            li.appendChild(area);
+            minhalista.appendChild(li);
+
+            adicionarTarefa.value = "";
+            adicionarTarefa.focus;
         }
-        const li = document.createElement('li');
-        li.textContent = texto;
-        const area = document.createElement('div');
-        area.className = area;
+        botaoTarefa.addEventListener('click', criarTarefa);
+        adicionarTarefa.addEventListener('keydown',function(e){
+            if(e.key==='Enter'){
+                criarTarefa()
+            };
+        });
     </script>
 </body>
 

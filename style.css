@@ -1,0 +1,51 @@
+body{
+    color: rgb(165, 42, 42);
+    text-align: center;
+    align-content: center;
+    background-color: rgb(145, 122, 94);
+}
+h1{
+    background-color: bisque;
+    border-radius: 5px;
+    
+}
+#NovaTarefa{
+    color: chocolate;
+}
+#adicionarTarefa{
+    color: chocolate;
+    background-color: bisque;
+}
+#botaoTarefa{
+    color: rgb(165, 42, 42);
+    background-color: bisque;
+}
+
+ol li::marker {
+    font-size: 1.5em; 
+    color: rgb(165, 42, 42);   
+    font-weight: bold; 
+}
+li{
+    padding: 0px;
+    height: 50px;
+    background-color:bisque ;
+    border: 100px;
+    border-radius: 5px;
+    border-color: chocolate;
+}
+#minhalista{
+    border: 100px;
+    border-color: chocolate;
+} 
+button#btnConcluir{
+    color: darkorchid;
+}
+li button:nth-child(1) { /* Botão Concluir */
+    background-color: #6d9e46;
+    color: white;
+}
+li button:nth-child(2) { /* Botão Remover */
+    background-color: #771b1b;
+    color: white;
+}
