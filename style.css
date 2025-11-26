@@ -44,8 +44,12 @@ button#btnConcluir{
 li button:nth-child(1) { /* Botão Concluir */
     background-color: #6d9e46;
     color: white;
+    margin: 5px;
+    height: 10px;/* arrumar aqui */
+    width: 10px;
 }
 li button:nth-child(2) { /* Botão Remover */
     background-color: #771b1b;
     color: white;
+    margin: 5px;
 }
